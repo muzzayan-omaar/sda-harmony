@@ -1,0 +1,290 @@
+==========================================================
+SDA HARMONY
+PROJECT ARCHITECTURE
+Version 1.0
+==========================================================
+
+MISSION
+--------
+Build the world's leading Seventh-day Adventist music streaming platform, starting in Uganda and expanding across Africa and eventually worldwide.
+
+The platform connects:
+
+• Listeners
+• Choirs
+• Solo Artists
+• Music Ministries
+• Conference Music Departments
+• Union Music Departments
+• Donors
+• Platform Administrators
+
+==========================================================
+SYSTEM ARCHITECTURE
+==========================================================
+
+Frontend (Mobile App)
+
+↓
+
+Backend API
+
+↓
+
+Database
+
+↓
+
+Cloud Storage
+
+==========================================================
+MOBILE APP
+==========================================================
+
+Technology
+
+• Expo
+• React Native
+• Expo Router
+• TypeScript
+• NativeWind
+• Zustand
+• TanStack Query
+
+==========================================================
+FOLDER STRUCTURE
+==========================================================
+
+app/
+    (auth)
+    (tabs)
+    choir/
+    album/
+    player/
+    settings/
+    modal/
+
+components/
+
+features/
+    auth/
+    music/
+    player/
+    downloads/
+    donations/
+    search/
+    profile/
+
+services/
+
+hooks/
+
+store/
+
+types/
+
+utils/
+
+constants/
+
+assets/
+
+theme/
+
+==========================================================
+NAVIGATION FLOW
+==========================================================
+
+Splash Screen
+
+↓
+
+Onboarding
+
+↓
+
+Login / Register
+
+↓
+
+Main Application
+
+Main Tabs
+
+• Home
+• Search
+• Downloads
+• Library
+• Profile
+
+Music Player
+
+Mini Player
+
+↓
+
+Full Screen Player
+
+Additional Screens
+
+• Choir Profile
+• Album Details
+• Song Details
+• Player
+• Settings
+• Notifications
+
+==========================================================
+STATE MANAGEMENT
+==========================================================
+
+Zustand
+
+Used For
+
+• Logged-in User
+• Current Song
+• Music Queue
+• Playback Status
+• Theme
+• Downloads
+• Settings
+
+TanStack Query
+
+Used For
+
+• Songs
+• Albums
+• Choirs
+• User Data
+• Search Results
+• Donations
+• API Caching
+
+==========================================================
+BACKEND ARCHITECTURE
+==========================================================
+
+Backend Technology
+
+• Node.js
+• Express.js
+• MongoDB
+• JWT Authentication
+
+Project Structure
+
+controllers/
+
+models/
+
+routes/
+
+middleware/
+
+services/
+
+utils/
+
+config/
+
+==========================================================
+STORAGE STRATEGY
+==========================================================
+
+MongoDB
+
+Stores
+
+• Users
+• Choirs
+• Albums
+• Songs Metadata
+• Donations
+• Playlists
+• Notifications
+• Analytics
+
+Cloudinary
+
+Stores
+
+• Album Covers
+• Choir Logos
+• Banners
+• Profile Pictures
+
+Cloudflare R2 (Recommended)
+
+Stores
+
+• Audio Files
+• Downloadable Music
+
+==========================================================
+DATABASE COLLECTIONS
+==========================================================
+
+Users
+
+Choirs
+
+Albums
+
+Songs
+
+Playlists
+
+Downloads
+
+Donations
+
+Withdrawals
+
+Notifications
+
+Reports
+
+Settings
+
+==========================================================
+VERIFIED CHOIR SYSTEM
+==========================================================
+
+Every choir receives its own profile page.
+
+Profile includes
+
+• Choir Logo
+• Banner
+• Biography
+• Members
+• Albums
+• Songs
+• Followers
+• Donation Button
+• Analytics
+• Social Media Links
+• Contact Information
+
+Verified Choir Badge
+
+✓ Shows authenticity.
+
+Users can
+
+• Follow Choir
+• Receive Notifications
+• Donate
+• Browse Albums
+• Listen to Songs
+• Share Choir Profile
+
+==========================================================
+LONG TERM GOAL
+==========================================================
+
+Become the official digital home for Seventh-day Adventist music worldwide while providing a sustainable platform for choirs, artists, and ministries.
+
+==========================================================

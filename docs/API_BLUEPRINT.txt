@@ -1,0 +1,154 @@
+==========================================================
+SDA HARMONY
+BACKEND API BLUEPRINT
+==========================================================
+
+AUTH
+
+POST /register
+POST /login
+POST /logout
+POST /forgot-password
+POST /reset-password
+
+-------------------------------------
+
+USERS
+
+GET /users/profile
+
+PUT /users/profile
+
+DELETE /users/account
+
+-------------------------------------
+
+CHOIRS
+
+POST /choirs
+
+GET /choirs
+
+GET /choirs/:id
+
+PUT /choirs/:id
+
+DELETE /choirs/:id
+
+POST /choirs/:id/follow
+
+POST /choirs/:id/unfollow
+
+GET /choirs/:id/followers
+
+POST /choirs/verification
+
+-------------------------------------
+
+ALBUMS
+
+POST /albums
+
+GET /albums
+
+GET /albums/:id
+
+PUT /albums/:id
+
+DELETE /albums/:id
+
+-------------------------------------
+
+SONGS
+
+POST /songs
+
+GET /songs
+
+GET /songs/:id
+
+PUT /songs/:id
+
+DELETE /songs/:id
+
+POST /songs/:id/play
+
+POST /songs/:id/download
+
+POST /songs/:id/like
+
+POST /songs/:id/unlike
+
+-------------------------------------
+
+PLAYER
+
+GET /player/queue
+
+POST /player/queue
+
+DELETE /player/queue
+
+-------------------------------------
+
+PLAYLISTS
+
+POST /playlists
+
+GET /playlists
+
+PUT /playlists/:id
+
+DELETE /playlists/:id
+
+POST /playlists/:id/song
+
+DELETE /playlists/:id/song
+
+-------------------------------------
+
+DONATIONS
+
+POST /donations
+
+GET /donations
+
+GET /donations/history
+
+POST /withdrawals
+
+GET /withdrawals
+
+-------------------------------------
+
+SEARCH
+
+GET /search
+
+GET /search/songs
+
+GET /search/albums
+
+GET /search/choirs
+
+-------------------------------------
+
+ADMIN
+
+GET /admin/dashboard
+
+GET /admin/users
+
+GET /admin/choirs
+
+GET /admin/reports
+
+POST /admin/verify
+
+POST /admin/reject
+
+POST /admin/feature
+
+DELETE /admin/delete
+
+==========================================================
