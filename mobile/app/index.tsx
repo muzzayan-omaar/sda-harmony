@@ -1,31 +1,25 @@
-import { View, Text, Pressable } from "react-native";
-import useThemeStore from "@/store/themeStore";
+import { View, Text } from "react-native";
+import { colors, typography } from "@/theme";
 
 export default function Home() {
-  const { theme, toggleTheme } = useThemeStore();
-
   return (
     <View
-      className={`flex-1 justify-center items-center ${
-        theme === "dark" ? "bg-blue-950" : "bg-gray-200"
-      }`}
+      style={{
+        flex: 1,
+        backgroundColor: colors.background,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <Text
-        className={`text-3xl font-bold ${
-          theme === "dark" ? "text-white" : "text-black"
-        }`}
+        style={{
+          color: colors.text,
+          fontSize: typography.h2,
+          fontWeight: "bold",
+        }}
       >
-        Theme: {theme}
+        Theme System Ready 🎨
       </Text>
-
-      <Pressable
-        onPress={toggleTheme}
-        className="mt-8 bg-blue-600 px-6 py-3 rounded-xl"
-      >
-        <Text className="text-white font-bold">
-          Toggle Theme
-        </Text>
-      </Pressable>
     </View>
   );
 }
