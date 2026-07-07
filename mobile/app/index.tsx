@@ -1,25 +1,14 @@
-import { View, Text } from "react-native";
-import { colors, typography } from "@/theme";
+import { Text } from "react-native";
+import Screen from "@/components/ui/Screen";
 
 export default function Home() {
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: colors.background,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <Screen>
       <Text
-        style={{
-          color: colors.text,
-          fontSize: typography.h2,
-          fontWeight: "bold",
-        }}
+        className="text-white text-3xl font-bold mt-20 text-center"
       >
-        Theme System Ready 🎨
+        SDA Harmony
       </Text>
-    </View>
+    </Screen>
   );
 }
