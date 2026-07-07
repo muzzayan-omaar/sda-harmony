@@ -1,28 +1,24 @@
-import { useState } from "react";
 import { Text } from "react-native";
 
 import Screen from "@/components/ui/Screen";
-import Input from "@/components/ui/Input";
+import Card from "@/components/ui/Card";
 
 export default function Home() {
-  const [name, setName] = useState("");
-
   return (
     <Screen>
-      <Text className="text-white text-3xl font-bold mb-8 mt-20">
-        SDA Harmony
+      <Text className="text-white text-3xl font-bold mt-12 mb-6">
+        Featured Song
       </Text>
 
-      <Input
-        label="Your Name"
-        placeholder="Enter your name"
-        value={name}
-        onChangeText={setName}
-      />
+      <Card>
+        <Text className="text-white text-xl font-bold">
+          Katonda Ali Wamu Nange
+        </Text>
 
-      <Text className="text-white mt-6">
-        Hello {name || "Guest"}
-      </Text>
+        <Text className="text-slate-400 mt-2">
+          Watoto Church Choir
+        </Text>
+      </Card>
     </Screen>
   );
 }
