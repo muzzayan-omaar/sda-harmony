@@ -1,14 +1,15 @@
-import { Text } from "react-native";
+import { Alert } from "react-native";
+
 import Screen from "@/components/ui/Screen";
+import Button from "@/components/ui/Button";
 
 export default function Home() {
   return (
     <Screen>
-      <Text
-        className="text-white text-3xl font-bold mt-20 text-center"
-      >
-        SDA Harmony
-      </Text>
+      <Button
+        title="Continue"
+        onPress={() => Alert.alert("Success", "Button Works!")}
+      />
     </Screen>
   );
 }
