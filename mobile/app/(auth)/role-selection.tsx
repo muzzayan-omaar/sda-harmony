@@ -1,3 +1,4 @@
+// app/(auth)/role-selection.tsx (replace entire file)
 import { View, Text, Pressable } from "react-native";
 import { router } from "expo-router";
 
@@ -7,27 +8,16 @@ import Card from "@/components/ui/Card";
 import { colors, spacing } from "@/theme";
 
 export default function RoleSelectionScreen() {
-  function selectRole(role: "listener" | "choir") {
-    console.log("Selected Role:", role);
-
-    router.push("/complete-profile");
+  function selectRole(role: "LISTENER" | "CHOIR") {
+    router.push({ pathname: "/register", params: { role } });
   }
 
   return (
     <Screen>
-      <Header
-        title="Choose Role"
-        showBackButton
-      />
+      <Header title="Choose Role" showBackButton />
 
       <View style={{ marginTop: spacing.xl }}>
-        <Text
-          style={{
-            color: colors.text,
-            fontSize: 30,
-            fontWeight: "bold",
-          }}
-        >
+        <Text style={{ color: colors.text, fontSize: 30, fontWeight: "bold" }}>
           Choose Your Experience
         </Text>
 
@@ -41,21 +31,12 @@ export default function RoleSelectionScreen() {
           Select how you'll use SDA Harmony.
         </Text>
 
-        <Pressable onPress={() => selectRole("listener")}>
+        <Pressable onPress={() => selectRole("LISTENER")}>
           <Card>
             <Text style={{ fontSize: 42 }}>🎧</Text>
-
-            <Text
-              style={{
-                color: colors.text,
-                fontSize: 22,
-                fontWeight: "bold",
-                marginTop: 12,
-              }}
-            >
+            <Text style={{ color: colors.text, fontSize: 22, fontWeight: "bold", marginTop: 12 }}>
               Listener
             </Text>
-
             <Text style={{ color: colors.textSecondary, marginTop: 8 }}>
               • Stream worship music{"\n"}
               • Download songs{"\n"}
@@ -65,21 +46,12 @@ export default function RoleSelectionScreen() {
           </Card>
         </Pressable>
 
-        <Pressable onPress={() => selectRole("choir")}>
+        <Pressable onPress={() => selectRole("CHOIR")}>
           <Card>
             <Text style={{ fontSize: 42 }}>🎤</Text>
-
-            <Text
-              style={{
-                color: colors.text,
-                fontSize: 22,
-                fontWeight: "bold",
-                marginTop: 12,
-              }}
-            >
+            <Text style={{ color: colors.text, fontSize: 22, fontWeight: "bold", marginTop: 12 }}>
               Choir
             </Text>
-
             <Text style={{ color: colors.textSecondary, marginTop: 8 }}>
               • Upload music{"\n"}
               • Create albums{"\n"}

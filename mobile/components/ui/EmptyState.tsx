@@ -1,3 +1,4 @@
+
 import { View, Text } from "react-native";
 import { colors } from "@/theme";
 

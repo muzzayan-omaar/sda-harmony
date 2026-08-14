@@ -16,9 +16,7 @@ api.interceptors.request.use((config) => {
   const { accessToken } = useAuthStore.getState();
 
   if (accessToken) {
-    // .set() is the safe Axios v1 API for AxiosHeaders — avoids edge cases
-    // where direct property assignment silently doesn't stick.
-    config.headers.set("Authorization", `Bearer ${accessToken}`);
+    config.headers.Authorization = `Bearer ${accessToken}`;
   }
 
   return config;
@@ -66,7 +64,7 @@ api.interceptors.response.use(
       refreshPromise = null;
 
       if (newToken) {
-        originalRequest.headers.set("Authorization", `Bearer ${newToken}`);
+        originalRequest.headers.Authorization = `Bearer ${newToken}`;
         return api(originalRequest);
       }
     }
