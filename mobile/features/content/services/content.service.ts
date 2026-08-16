@@ -1,4 +1,3 @@
-// features/content/services/content.service.ts (new file)
 import api from "@/services/api/client";
 import { ENDPOINTS } from "@/services/api/endpoints";
 import { Album, Song, ChoirProfile } from "../types/content";
@@ -24,7 +23,12 @@ export const contentService = {
     return data.albums;
   },
 
-  async createSong(input: { title: string; audioUrl: string; duration?: number; albumId?: string }): Promise<Song> {
+  async createSong(input: {
+    title: string;
+    audioUrl: string;
+    duration?: number;
+    albumId?: string;
+  }): Promise<Song> {
     const { data } = await api.post(ENDPOINTS.SONGS, input);
     return data.song;
   },
@@ -39,7 +43,34 @@ export const contentService = {
     return data.songs;
   },
 
-  // features/content/services/content.service.ts — add this method to the object
+  async likeSong(songId: string): Promise<void> {
+    await api.post(`${ENDPOINTS.SONGS}/${songId}/like`);
+  },
+
+  async unlikeSong(songId: string): Promise<void> {
+    await api.delete(`${ENDPOINTS.SONGS}/${songId}/like`);
+  },
+
+  async getLikedSongs(): Promise<Song[]> {
+    const { data } = await api.get(`${ENDPOINTS.SONGS}/liked`);
+    return data.songs;
+  },
+
+  async getLikedSongIds(): Promise<string[]> {
+    const { data } = await api.get(`${ENDPOINTS.SONGS}/liked/ids`);
+    return data.songIds;
+  },
+
+  async getChoirById(id: string): Promise<ChoirProfile> {
+    const { data } = await api.get(`${ENDPOINTS.CHOIRS}/${id}`);
+    return data.choir;
+  },
+
+  async getChoirSongs(id: string): Promise<Song[]> {
+    const { data } = await api.get(`${ENDPOINTS.CHOIRS}/${id}/songs`);
+    return data.songs;
+  },
+
   async requestVerification(): Promise<void> {
     await api.post(`${ENDPOINTS.CHOIRS}/me/request-verification`);
   },
